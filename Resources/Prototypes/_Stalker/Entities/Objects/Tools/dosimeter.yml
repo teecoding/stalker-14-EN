@@ -7,6 +7,7 @@
   abstract: true
   components:
     - type: Sprite
+      sprite: Objects/Tools/geiger.rsi
       layers:
         - state: geiger_base
         - state: geiger_on_idle

@@ -4,11 +4,26 @@
   name: Mercenary's PDA
   description: It's connected to the common network to allow communication; it also has a built in cassette player.
   components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        merc_on
   - type: PdaBorderColor
     borderColor: "#12213a"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: merc_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: merc_on
+    - state: light_overlay
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: unshaded
+      visible: false
+    - state: id_overlay
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: unshaded
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
@@ -76,7 +91,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -89,12 +103,27 @@
   suffix: Voenstals
   description: A secure, encrypted device designed for field communication, mission management, and data collection. Built with reinforced casing to withstand radiation, rumored to withstand a nuclear blast.
   components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        mpda_on
   - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#285714"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: mpda_on
+    - state: light_overlay
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: unshaded
+      visible: false
+    - state: id_overlay
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: unshaded
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: mpda_on
@@ -155,7 +184,6 @@
     radius: 5
     energy: 2.5
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
   - type: Armor
@@ -172,11 +200,26 @@
   suffix: ST, OKSOP
   description: A secure, encrypted device designed for field communication, mission management, and data collection. Rumored to withstand a nuclear blast.
   components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        mpda_on
   - type: PdaBorderColor
     borderColor: "#285714"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: mpda_on
+    - state: light_overlay
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: unshaded
+      visible: false
+    - state: id_overlay
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: unshaded
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: mpda_on
@@ -237,6 +280,5 @@
     radius: 5
     energy: 2.5
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
