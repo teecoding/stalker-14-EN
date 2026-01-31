@@ -144,7 +144,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
     {
         if (activator.Comp.NexActivationTime > _timing.CurTime)
         {
-            _popup.PopupEntity("Локатор ещё не готов!", user, user, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("st-anomaly-detector-not-ready"), user, user, PopupType.Medium);
             return;
         }
 
@@ -161,7 +161,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
                 break;
         }
 
-        _popup.PopupEntity("Прибор электризует окружение", user, user, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("st-anomaly-detector-activated"), user, user, PopupType.Medium);
         activator.Comp.NexActivationTime = _timing.CurTime + activator.Comp.ActivationDelay;
     }
 
@@ -170,12 +170,12 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
         var user = args.User;
         AlternativeVerb verb = new()
         {
-            Text = "Тумблер B",
+            Text = Loc.GetString("st-anomaly-detector-toggle-verb"),
             Act = () =>
             {
                 ActivateAnomalies(activator, user);
             },
-            Message = "Активировать аномалии",
+            Message = Loc.GetString("st-anomaly-detector-activate-message"),
         };
         args.Verbs.Add(verb);
     }

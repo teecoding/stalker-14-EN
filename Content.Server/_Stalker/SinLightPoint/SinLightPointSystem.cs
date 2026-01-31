@@ -87,7 +87,7 @@ public sealed partial class SinLightPointSystem : EntitySystem
             mentions.AllowRoleMentions();
             var payload = new WebhookPayload
             {
-                Content = $"<@&1218533341691772958>\n`{people} людей сейчас на {location}.`",
+                Content = $"<@&1218533341691772958>\n`{Loc.GetString("st-sin-light-discord-people", ("people", people), ("location", location))}`",
                 AllowedMentions = mentions,
             };
             Log.Info(payload.Content);
