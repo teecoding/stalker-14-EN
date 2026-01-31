@@ -1,0 +1,46 @@
+# Stub radio channel prototypes to satisfy tests that spawn entities with encryption keys.
+# Stalker does not use SS14's departmental radio system.
+
+- type: radioChannel
+  id: CentCom
+  name: stub-channel-centcom
+  color: "#2ed2fd"
+  frequency: 1337
+
+- type: radioChannel
+  id: Supply
+  name: stub-channel-supply
+  color: "#D9B386"
+  frequency: 1350
+
+# Note: Command channel already defined in Entities/Objects/Devices/headset.yml
+
+- type: radioChannel
+  id: Engineering
+  name: stub-channel-engineering
+  color: "#EFB341"
+  frequency: 1354
+
+- type: radioChannel
+  id: Medical
+  name: stub-channel-medical
+  color: "#52B4E9"
+  frequency: 1355
+
+- type: radioChannel
+  id: Science
+  name: stub-channel-science
+  color: "#D381C9"
+  frequency: 1356
+
+- type: radioChannel
+  id: Security
+  name: stub-channel-security
+  color: "#DE3A3A"
+  frequency: 1357
+
+- type: radioChannel
+  id: Service
+  name: stub-channel-service
+  color: "#6CA729"
+  frequency: 1358

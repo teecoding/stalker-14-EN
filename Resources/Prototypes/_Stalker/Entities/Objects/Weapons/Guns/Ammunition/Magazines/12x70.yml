@@ -242,15 +242,15 @@
     - 0,0,0,1
   - type: ItemMapper
     mapLayers:
-      red_9:
+      red_10:
         whitelist:
           tags:
             - STElasticRubberRed
-      green_9:
+      green_10:
         whitelist:
           tags:
             - STElasticRubberGreen
-      blue_9:
+      blue_10:
         whitelist:
           tags:
             - STElasticRubberBlue
@@ -318,3 +318,18 @@
     size: Normal
     shape:
     - 0,0,2,2
+  - type: ItemMapper
+    mapLayers:
+      red_20:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_20:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_20:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/elastic_rubber.rsi

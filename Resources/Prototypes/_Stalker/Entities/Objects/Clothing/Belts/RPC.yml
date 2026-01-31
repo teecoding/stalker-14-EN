@@ -89,6 +89,12 @@
       self: 0.5
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/Belts/knife_belt.rsi
+      layers:
+      - state: icon
+      - map: [ "knife" ]
+        state: knife
+        sprite: _Stalker/Objects/Clothing/Belts/knife_belt_overlay.rsi
+        visible: false
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/Belts/knife_belt.rsi
     - type: Item
