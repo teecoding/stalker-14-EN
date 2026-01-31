@@ -1,4 +1,4 @@
-store-currency-display-ruble = rubles
+store-currency-display-ruble = roubles
 store-currency-display-dollar = dollars
 store-currency-display-supply-talons = supply talons
 store-currency-display-premium-supply-talons = premium supply talons
