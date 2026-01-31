@@ -28,6 +28,7 @@ using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Actions.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -1483,9 +1484,9 @@ public sealed class LoadoutSystem : EntitySystem
         // Default component checks
         // Note: CartridgeComponent intentionally NOT blacklisted - we want to track bullets in loadouts
         return HasComp<Content.Shared.Body.Organ.OrganComponent>(item) ||
-               HasComp<Content.Shared.Actions.InstantActionComponent>(item) ||
-               HasComp<Content.Shared.Actions.WorldTargetActionComponent>(item) ||
-               HasComp<Content.Shared.Actions.EntityTargetActionComponent>(item) ||
+               HasComp<Content.Shared.Actions.Components.InstantActionComponent>(item) ||
+               HasComp<Content.Shared.Actions.Components.WorldTargetActionComponent>(item) ||
+               HasComp<Content.Shared.Actions.Components.EntityTargetActionComponent>(item) ||
                HasComp<Content.Shared.Implants.Components.SubdermalImplantComponent>(item) ||
                HasComp<Content.Shared.Body.Part.BodyPartComponent>(item) ||
                HasComp<Content.Shared.Inventory.VirtualItem.VirtualItemComponent>(item) ||

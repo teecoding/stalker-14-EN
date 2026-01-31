@@ -1,5 +1,6 @@
 ﻿using Content.Server.Forensics;
 using Content.Shared.Examine;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
@@ -25,12 +26,12 @@ public sealed class TakingAbilitySystem : EntitySystem
 
         AlternativeVerb verb = new()
         {
-            Text = "Переключить блокировку",
+            Text = Loc.GetString("st-taking-ability-toggle-lock"),
             Act = () =>
             {
                 ToggleRemovable(entity);
             },
-            Message = "Переключить блокировку"
+            Message = Loc.GetString("st-taking-ability-toggle-lock")
         };
         args.Verbs.Add(verb);
     }
@@ -41,12 +42,12 @@ public sealed class TakingAbilitySystem : EntitySystem
         {
             case true:
             {
-                args.PushMarkup("Предмет заблокирован");
+                args.PushMarkup(Loc.GetString("st-taking-ability-locked"));
                 break;
             }
             case false:
             {
-                args.PushMarkup("Предмет разблокирован");
+                args.PushMarkup(Loc.GetString("st-taking-ability-unlocked"));
                 break;
             }
         }

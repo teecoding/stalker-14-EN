@@ -25,6 +25,12 @@ public partial class RestartSystem : EntitySystem
     private TimeSpan _updateTime;
     private TimeSpan _scheduledRestartDuration;
 
+    // Stalker-TODO: This should not exist. Ideally we need a proper way to skip "Update" in this system in test
+    /// <summary>
+    /// Is this system Enabled?
+    /// </summary>
+    public bool Enabled = true;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -34,6 +40,9 @@ public partial class RestartSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        if (!Enabled)
+            return;
+
         base.Update(frameTime);
 
         if (_updateTime > _timing.CurTime)
@@ -103,17 +112,17 @@ public partial class RestartSystem : EntitySystem
         var session = shell.Player;
         if (spawn == null)
         {
-            shell.WriteError("Нет спавнера Stalker Job Spawn на картах");
+            shell.WriteError(Loc.GetString("st-restart-no-spawner"));
             return;
         }
         if (session?.AttachedEntity == null)
         {
-            shell.WriteError("Сущность не игрок");
+            shell.WriteError(Loc.GetString("st-restart-not-player"));
             return;
         }
         if (data.Comp.Time == default)
         {
-            shell.WriteError("Рестарт не запланирован");
+            shell.WriteError(Loc.GetString("st-restart-not-scheduled"));
             return;
         }
         if (_scheduledRestartDuration >= TimeSpan.FromMinutes(45))
@@ -125,9 +134,9 @@ public partial class RestartSystem : EntitySystem
         var portalAvailableTime = data.Comp.Time - _teleportDelay;
         if (portalAvailableTime >= _timing.CurTime)
         {
-            var message = $"Телепортация возможно только за {_teleportDelay} до рестарта";
+            var message = Loc.GetString("st-restart-teleport-timing", ("delay", _teleportDelay));
             shell.WriteError(message);
-            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} пытался телепортироваться в чистилище");
+            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} tried to teleport to purgatory");
             return;
         }
 
@@ -135,9 +144,9 @@ public partial class RestartSystem : EntitySystem
 
         if (_usedHomeCommand.Contains(uid))
         {
-            var message = $"Телепортация возможнa только один раз";
+            var message = Loc.GetString("st-restart-teleport-once");
             shell.WriteError(message);
-            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} пытался повторно телепортироваться в чистилище");
+            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} tried to teleport to purgatory again");
             return;
         }
 
@@ -146,8 +155,8 @@ public partial class RestartSystem : EntitySystem
 
         transformSystem.SetCoordinates(session.AttachedEntity.Value, targetCoords);
         transformSystem.AttachToGridOrMap(session.AttachedEntity.Value);
-        _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} телепортировался в Чистилище");
-        shell.WriteLine("Успешная телепортация");
+        _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} teleported to Purgatory");
+        shell.WriteLine(Loc.GetString("st-restart-teleport-success"));
         _usedHomeCommand.Add(uid);
     }
 

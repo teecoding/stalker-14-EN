@@ -42,6 +42,7 @@ entities:
     - type: MetaData
       name: Voenka
     - type: Transform
+    - type: Roof
     - type: Map
       mapPaused: True
     - type: PhysicsMap
@@ -22797,20 +22798,24 @@ entities:
     - type: RadiationGridResistance
     - type: LoadedMap
     - type: StalkerSafeZone
-    - type: MapDay
-      colors:
-      - '#E2D2B711'
-      - '#E2D2B722'
-      - '#D9C5B622'
-      - '#744A3EFF'
-      - '#0D1926FF'
-      - '#010105FF'
-      - '#0D1926FF'
-      - '#5D492AFF'
-      - '#B2904EFF'
-      - '#D9C5B622'
-      - '#E2D2B722'
-      - '#E2D2B711'
+    - type: LightCycle
+      duration: 90m
+      initialOffset: false
+      offset: 20m
+      minLightLevel: 0.35
+    - type: SunShadow
+    - type: SunShadowCycle
+      directions:
+      - direction: 0,3
+      - alpha: 0.5
+        direction: -3,-0.1
+        ratio: 0.25
+      - alpha: 0.8
+        direction: 0,-3
+        ratio: 0.5
+      - alpha: 0.5
+        direction: 3,-0.1
+        ratio: 0.75
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 1
 - proto: AcousticGuitarInstrument
@@ -23349,8 +23354,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -21.5,85.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6109.3940736
     - type: PointLight
       enabled: True
     - type: SpamEmitSound
@@ -33359,8 +33362,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,1.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6444.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -33442,8 +33443,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -21.5,18.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6424.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -33485,8 +33484,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -27.5,104.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6413.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -33529,8 +33526,6 @@ entities:
     - type: Transform
       pos: -42.5,47.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6492.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -33588,8 +33583,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -34.5,95.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6466.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -33648,8 +33641,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -21.5,107.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6502.3940736
     - type: ContainerContainer
       containers:
         body_root_part: !type:ContainerSlot {}
@@ -36782,8 +36773,6 @@ entities:
     - type: Transform
       pos: -47.5,15.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6509.3940736
 - proto: RadioStalkerJukebox
   entities:
   - uid: 2479
@@ -43771,8 +43760,6 @@ entities:
     - type: Transform
       pos: -25.5,18.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6515.3940736
     - type: PointLight
       enabled: True
     - type: ApcPowerReceiver
@@ -43787,8 +43774,6 @@ entities:
     - type: Transform
       pos: -30.5,100.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6419.3940736
     - type: PointLight
       enabled: True
   - uid: 3298
@@ -43799,8 +43784,6 @@ entities:
     - type: Transform
       pos: -10.5,49.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6492.3940736
     - type: PointLight
       enabled: True
     - type: ApcPowerReceiver
@@ -43812,8 +43795,6 @@ entities:
     - type: Transform
       pos: -39.5,96.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6499.3940736
     - type: PointLight
       enabled: True
 - proto: VendingMachineSovietSoda
@@ -43823,8 +43804,6 @@ entities:
     - type: Transform
       pos: -24.5,14.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6456.3940736
     - type: PointLight
       enabled: True
     - type: ApcPowerReceiver
@@ -43834,8 +43813,6 @@ entities:
     - type: Transform
       pos: -29.5,100.5
       parent: 1
-    - type: Advertise
-      nextAdvertisementTime: 6415.3940736
     - type: PointLight
       enabled: True
 - proto: WallBrickFallout

@@ -6,6 +6,8 @@ using Content.Server.GameTicking;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Weather;
 using Robust.Server.Player;

@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio;
-using Content.Server.Radio.Components;
+using Content.Shared.Radio.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared._Stalker.RadioStalker.Components;
 using Content.Shared._Stalker_EN.Radio;

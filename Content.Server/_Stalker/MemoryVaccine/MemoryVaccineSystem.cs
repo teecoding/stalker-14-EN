@@ -8,6 +8,7 @@ using Content.Shared.Bed.Sleep;
 using Content.Server._Stalker.MemoryLost;
 using Content.Shared.MemoryVaccine;
 using Content.Server.Forensics;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Interaction;
 
 namespace Content.Server.MemoryVaccine
@@ -51,7 +52,7 @@ namespace Content.Server.MemoryVaccine
                     NeedHand = true,
                     DistanceThreshold = 2f,
                 };
-                _popupSystem.PopupEntity("Ввод ампулы", target.Value, PopupType.LargeCaution);
+                _popupSystem.PopupEntity(Loc.GetString("st-memory-vaccine-injecting"), target.Value, PopupType.LargeCaution);
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
             }
 
@@ -64,7 +65,7 @@ namespace Content.Server.MemoryVaccine
                 return;
             var target = args.Args.Target.Value;
 
-            _popupSystem.PopupEntity("Ампула введена", uid, PopupType.LargeCaution);
+            _popupSystem.PopupEntity(Loc.GetString("st-memory-vaccine-injected"), uid, PopupType.LargeCaution);
             AddComp<MemoryLostComponent>(target);
             AddComp<SleepingComponent>(target);
 
