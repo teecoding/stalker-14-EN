@@ -153803,6 +153803,7 @@ entities:
             128670: 109.39754,243.96848
             128672: 115.86786,241.65092
             129260: 103.79955,298.9777
+            130019: 148.51756,552.75195
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -276409,6 +276410,12 @@ entities:
             122809: 20.804932,139.44246
             122810: 20.898682,138.22371
             122811: 20.148682,137.94246
+            130013: 149.00194,552.7207
+            130014: 148.56444,553.00195
+            130015: 148.42381,552.68945
+            130016: 148.93944,552.9082
+            130017: 149.06444,553.1426
+            130018: 148.36131,552.4238
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -279831,6 +279838,13 @@ entities:
     - type: BatterySelfRecharger
       autoRechargeRate: 50000
       autoRecharge: True
+- proto: Ash
+  entities:
+  - uid: 24125
+    components:
+    - type: Transform
+      pos: 149.23299,553.4707
+      parent: 1
 - proto: BagPotato2
   entities:
   - uid: 22842
@@ -279888,18 +279902,6 @@ entities:
     components:
     - type: Transform
       pos: -169.5,2.5
-      parent: 1
-- proto: Banner4
-  entities:
-  - uid: 9396
-    components:
-    - type: Transform
-      pos: 154.5,550.5
-      parent: 1
-  - uid: 13765
-    components:
-    - type: Transform
-      pos: 163.97156,540.4957
       parent: 1
 - proto: Banner7
   entities:
@@ -289153,6 +289155,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 60.207268,373.54196
       parent: 1
+  - uid: 23411
+    components:
+    - type: Transform
+      pos: 157.49263,557.7035
+      parent: 1
 - proto: BulletHoles2Stalker
   entities:
   - uid: 1747
@@ -289182,6 +289189,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 62.38834,373.5694
+      parent: 1
+  - uid: 22893
+    components:
+    - type: Transform
+      pos: 156.52388,557.67224
       parent: 1
 - proto: BulletHoles3Stalker
   entities:
@@ -289346,6 +289358,16 @@ entities:
     components:
     - type: Transform
       pos: 10.475928,-45.393917
+      parent: 1
+  - uid: 2770
+    components:
+    - type: Transform
+      pos: 154.477,556.79724
+      parent: 1
+  - uid: 16956
+    components:
+    - type: Transform
+      pos: 154.83638,556.516
       parent: 1
 - proto: Bush02
   entities:
@@ -294506,12 +294528,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -37.5,105.5
       parent: 1
-  - uid: 2651
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 150.5,553.5
-      parent: 1
   - uid: 2652
     components:
     - type: Transform
@@ -294779,8 +294795,8 @@ entities:
           Heat: 3
           Caustic: 1
           Radiation: 3
-          Shock: 1.0995116E+12
-          Psy: 1.0995116E+12
+          Shock: 1.7592186E+13
+          Psy: 1.7592186E+13
         coefficients:
           Blunt: 0.9
           Slash: 0.9
@@ -295162,8 +295178,24 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 53.5,438.5
       parent: 1
+  - uid: 16824
+    components:
+    - type: Transform
+      pos: 154.5,557.5
+      parent: 1
+  - uid: 24128
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 152.5,543.5
+      parent: 1
 - proto: Cobweb2
   entities:
+  - uid: 2651
+    components:
+    - type: Transform
+      pos: 155.5,546.5
+      parent: 1
   - uid: 2737
     components:
     - type: Transform
@@ -295367,13 +295399,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -154.5,-7.5
-      parent: 1
-- proto: Cordon-MercBandUncollide
-  entities:
-  - uid: 3384
-    components:
-    - type: Transform
-      pos: 152.5,552.5
       parent: 1
 - proto: Cordon-MilBase
   entities:
@@ -296939,18 +296964,6 @@ entities:
     components:
     - type: Transform
       pos: -74.5,119.5
-      parent: 1
-- proto: DogBed
-  entities:
-  - uid: 22893
-    components:
-    - type: Transform
-      pos: 153.5,549.5
-      parent: 1
-  - uid: 26228
-    components:
-    - type: Transform
-      pos: 167.5,549.5
       parent: 1
 - proto: DrinkBottleVodka
   entities:
@@ -301610,6 +301623,14 @@ entities:
     components:
     - type: Transform
       pos: -142.5,-4.5
+      parent: 1
+- proto: FireFlyGreenTrigger
+  entities:
+  - uid: 9575
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 160.5,548.5
       parent: 1
 - proto: Fireplace
   entities:
@@ -331790,46 +331811,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 191.5,351.5
       parent: 1
-- proto: MetalAltDoorFalloutMercClosed
-  entities:
-  - uid: 3567
-    components:
-    - type: Transform
-      pos: 155.5,547.5
-      parent: 1
-  - uid: 7230
-    components:
-    - type: Transform
-      pos: 156.5,554.5
-      parent: 1
-  - uid: 9186
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 161.5,537.5
-      parent: 1
-  - uid: 9344
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 151.5,548.5
-      parent: 1
-  - uid: 16956
-    components:
-    - type: Transform
-      pos: 155.5,542.5
-      parent: 1
-  - uid: 24264
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 156.5,545.5
-      parent: 1
-  - uid: 24273
-    components:
-    - type: Transform
-      pos: 160.5,540.5
-      parent: 1
 - proto: MetalAltDoorFalloutMilitaryClosed
   entities:
   - uid: 5613
@@ -331870,6 +331851,35 @@ entities:
     - type: Transform
       pos: -15.5,-49.5
       parent: 1
+- proto: MetalAltDoorFalloutSeraphimsClosed
+  entities:
+  - uid: 7230
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 151.5,548.5
+      parent: 1
+  - uid: 9186
+    components:
+    - type: Transform
+      pos: 160.5,540.5
+      parent: 1
+  - uid: 9344
+    components:
+    - type: Transform
+      pos: 155.5,547.5
+      parent: 1
+  - uid: 9396
+    components:
+    - type: Transform
+      pos: 155.5,542.5
+      parent: 1
+  - uid: 9462
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 156.5,545.5
+      parent: 1
 - proto: MetalBarDoorFallout
   entities:
   - uid: 9404
@@ -331901,24 +331911,22 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -5.5,114.5
       parent: 1
+  - uid: 11362
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 122.5,558.5
+      parent: 1
+  - uid: 13765
+    components:
+    - type: Transform
+      pos: 132.5,552.5
+      parent: 1
   - uid: 16841
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 50.5,356.5
-      parent: 1
-- proto: MetalBarDoorFalloutMercClosed
-  entities:
-  - uid: 3713
-    components:
-    - type: Transform
-      pos: 132.5,552.5
-      parent: 1
-  - uid: 16783
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 122.5,558.5
       parent: 1
 - proto: MetalDoorFallout
   entities:
@@ -332038,13 +332046,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 103.5,298.5
-      parent: 1
-- proto: MetalGrateDoorFalloutMercClosed
-  entities:
-  - uid: 11362
-    components:
-    - type: Transform
-      pos: 145.5,556.5
       parent: 1
 - proto: MetalGrateDoorFalloutMilitaryClosed
   entities:
@@ -332259,35 +332260,6 @@ entities:
     - type: Transform
       pos: 54.5,368.5
       parent: 1
-- proto: NPCCatPet
-  entities:
-  - uid: 22955
-    components:
-    - type: Transform
-      pos: 153.5,549.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        mask: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        body_root_part: !type:ContainerSlot {}
-  - uid: 23404
-    components:
-    - type: MetaData
-      desc: An ordinary cat, her name is Sunrise. A local landmark.
-      name: Sunrise [NPC]
-    - type: Transform
-      pos: 167.5,549.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        mask: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        body_root_part: !type:ContainerSlot {}
 - proto: NPCClerkAlexeySmirnov
   entities:
   - uid: 9461
@@ -332341,84 +332313,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,112.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        body_root_part: !type:ContainerSlot {}
-        shoes: !type:ContainerSlot
-          occludes: False
-        jumpsuit: !type:ContainerSlot
-          occludes: False
-        outerClothing: !type:ContainerSlot
-          occludes: False
-        gloves: !type:ContainerSlot
-          occludes: False
-        neck: !type:ContainerSlot
-          occludes: False
-        mask: !type:ContainerSlot
-          occludes: False
-        eyes: !type:ContainerSlot
-          occludes: False
-        ears: !type:ContainerSlot
-          occludes: False
-        head: !type:ContainerSlot
-          occludes: False
-        pocket1: !type:ContainerSlot
-          occludes: False
-        pocket2: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        id: !type:ContainerSlot
-          occludes: False
-        belt: !type:ContainerSlot
-          occludes: False
-        back: !type:ContainerSlot
-          occludes: False
-  - uid: 23331
-    components:
-    - type: Transform
-      pos: 158.5,544.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        body_root_part: !type:ContainerSlot {}
-        shoes: !type:ContainerSlot
-          occludes: False
-        jumpsuit: !type:ContainerSlot
-          occludes: False
-        outerClothing: !type:ContainerSlot
-          occludes: False
-        gloves: !type:ContainerSlot
-          occludes: False
-        neck: !type:ContainerSlot
-          occludes: False
-        mask: !type:ContainerSlot
-          occludes: False
-        eyes: !type:ContainerSlot
-          occludes: False
-        ears: !type:ContainerSlot
-          occludes: False
-        head: !type:ContainerSlot
-          occludes: False
-        pocket1: !type:ContainerSlot
-          occludes: False
-        pocket2: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        id: !type:ContainerSlot
-          occludes: False
-        belt: !type:ContainerSlot
-          occludes: False
-        back: !type:ContainerSlot
-          occludes: False
-- proto: NPCMercHummingbirdEN
-  entities:
-  - uid: 9462
-    components:
-    - type: Transform
-      pos: 157.5,557.5
       parent: 1
     - type: ContainerContainer
       containers:
@@ -333155,12 +333049,6 @@ entities:
       parent: 1
     missingComponents:
     - Strap
-  - uid: 9575
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 149.5,552.5
-      parent: 1
   - uid: 9578
     components:
     - type: Transform
@@ -339768,6 +339656,11 @@ entities:
       canCollide: False
 - proto: PlasticWaste0
   entities:
+  - uid: 3701
+    components:
+    - type: Transform
+      pos: 149.53127,543.3564
+      parent: 1
   - uid: 10773
     components:
     - type: Transform
@@ -339905,8 +339798,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.561158,110.19144
       parent: 1
+  - uid: 14214
+    components:
+    - type: Transform
+      pos: 152.79689,541.05066
+      parent: 1
 - proto: PlasticWaste1
   entities:
+  - uid: 3713
+    components:
+    - type: Transform
+      pos: 152.85799,553.7832
+      parent: 1
   - uid: 10800
     components:
     - type: Transform
@@ -340027,8 +339930,33 @@ entities:
     - type: Transform
       pos: 134.45755,510.48514
       parent: 1
+  - uid: 16794
+    components:
+    - type: Transform
+      pos: 153.57674,553.6582
+      parent: 1
+  - uid: 22911
+    components:
+    - type: Transform
+      pos: 153.18611,553.31445
+      parent: 1
+  - uid: 24126
+    components:
+    - type: Transform
+      pos: 149.82674,556.2051
+      parent: 1
 - proto: PlasticWaste2
   entities:
+  - uid: 3384
+    components:
+    - type: Transform
+      pos: 150.35799,551.4238
+      parent: 1
+  - uid: 3567
+    components:
+    - type: Transform
+      pos: 148.99706,543.24274
+      parent: 1
   - uid: 10822
     components:
     - type: Transform
@@ -340203,6 +340131,16 @@ entities:
     - type: Transform
       pos: 230.46608,144.83228
       parent: 1
+  - uid: 16785
+    components:
+    - type: Transform
+      pos: 157.81595,553.7642
+      parent: 1
+  - uid: 16786
+    components:
+    - type: Transform
+      pos: 149.48143,543.86774
+      parent: 1
 - proto: PlasticWaste3
   entities:
   - uid: 10856
@@ -340285,6 +340223,16 @@ entities:
     components:
     - type: Transform
       pos: 135.61172,508.5071
+      parent: 1
+  - uid: 16783
+    components:
+    - type: Transform
+      pos: 152.59236,554.4863
+      parent: 1
+  - uid: 17111
+    components:
+    - type: Transform
+      pos: 155.75002,539.7069
       parent: 1
 - proto: plateStalker1
   entities:
@@ -342821,13 +342769,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 165.75824,250.2697
       parent: 1
-- proto: PortalBandMercenariesRepository
-  entities:
-  - uid: 26374
-    components:
-    - type: Transform
-      pos: 163.5,534.5
-      parent: 1
 - proto: PosterBilly
   entities:
   - uid: 23437
@@ -342892,26 +342833,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 158.5,550.5
-      parent: 1
-  - uid: 26308
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 166.5,550.5
-      parent: 1
-- proto: PosterCat3
-  entities:
-  - uid: 26303
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 152.5,550.5
-      parent: 1
-  - uid: 26307
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 162.5,540.5
       parent: 1
 - proto: PosterCNPP
   entities:
@@ -354552,11 +354473,6 @@ entities:
     - type: Transform
       pos: 182.5,292.5
       parent: 1
-  - uid: 9414
-    components:
-    - type: Transform
-      pos: 149.5,553.5
-      parent: 1
   - uid: 9434
     components:
     - type: Transform
@@ -356036,6 +355952,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -66.5,212.5
       parent: 1
+  - uid: 22955
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 151.5,534.5
+      parent: 1
 - proto: StalkerFenceMetalBrokenPerimetr
   entities:
   - uid: 3059
@@ -356435,12 +356357,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 156.5,534.5
-      parent: 1
-  - uid: 3701
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 151.5,534.5
       parent: 1
   - uid: 3703
     components:
@@ -359639,25 +359555,23 @@ entities:
     - type: Transform
       pos: -39.5,124.5
       parent: 1
+  - uid: 23404
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 139.5,556.5
+      parent: 1
+  - uid: 23409
+    components:
+    - type: Transform
+      pos: 153.5,534.5
+      parent: 1
 - proto: StalkerGateArmyClosed
   entities:
   - uid: 14386
     components:
     - type: Transform
       pos: 12.5,-109.5
-      parent: 1
-- proto: StalkerGateMercEN
-  entities:
-  - uid: 16794
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 139.5,556.5
-      parent: 1
-  - uid: 16824
-    components:
-    - type: Transform
-      pos: 153.5,534.5
       parent: 1
 - proto: StalkerGater
   entities:
@@ -359709,6 +359623,17 @@ entities:
     - type: Transform
       pos: -38.5,124.5
       parent: 1
+  - uid: 23253
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 139.5,555.5
+      parent: 1
+  - uid: 23331
+    components:
+    - type: Transform
+      pos: 154.5,534.5
+      parent: 1
 - proto: StalkerGaterArmyClosed
   entities:
   - uid: 14399
@@ -359725,19 +359650,6 @@ entities:
       parent: 1
     missingComponents:
     - Door
-- proto: StalkerGaterMercEN
-  entities:
-  - uid: 16785
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 139.5,555.5
-      parent: 1
-  - uid: 16786
-    components:
-    - type: Transform
-      pos: 154.5,534.5
-      parent: 1
 - proto: StalkerMapGrass1
   entities:
   - uid: 13654
@@ -372125,13 +372037,6 @@ entities:
     - type: Transform
       pos: 167.5,539.5
       parent: 1
-- proto: StalkerTeleportMerc
-  entities:
-  - uid: 26375
-    components:
-    - type: Transform
-      pos: 167.5,534.5
-      parent: 1
 - proto: StalkerTimedSpawner30
   entities:
   - uid: 16521
@@ -373742,6 +373647,27 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -51.5,125.5
       parent: 1
+  - uid: 24130
+    components:
+    - type: Transform
+      pos: 155.5,542.5
+      parent: 1
+  - uid: 24131
+    components:
+    - type: Transform
+      pos: 156.5,554.5
+      parent: 1
+  - uid: 24132
+    components:
+    - type: Transform
+      pos: 160.5,540.5
+      parent: 1
+  - uid: 24133
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 151.5,534.5
+      parent: 1
   - uid: 27785
     components:
     - type: Transform
@@ -375348,12 +375274,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 99.5,214.5
-      parent: 1
-  - uid: 17111
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 148.5,553.5
       parent: 1
   - uid: 17113
     components:
@@ -405252,6 +405172,20 @@ entities:
     - type: Transform
       pos: 139.5,257.5
       parent: 1
+- proto: STMetalBarDoorFalloutSeraphimsClosed
+  entities:
+  - uid: 13808
+    components:
+    - type: Transform
+      pos: 145.5,556.5
+      parent: 1
+    - type: Door
+      secondsUntilStateChange: -592.83527
+      state: Denying
+    - type: Physics
+      canCollide: False
+    - type: Airtight
+      airBlocked: False
 - proto: STMonumentJerryimmouse
   entities:
   - uid: 22616
@@ -406212,6 +406146,18 @@ entities:
     components:
     - type: Transform
       pos: 232.5,137.5
+      parent: 1
+- proto: STTriggerBayun125
+  entities:
+  - uid: 24134
+    components:
+    - type: Transform
+      pos: 154.5,538.5
+      parent: 1
+  - uid: 24264
+    components:
+    - type: Transform
+      pos: 149.5,553.5
       parent: 1
 - proto: STTriggerBearT1121010
   entities:
@@ -430522,14 +430468,6 @@ entities:
     - type: Transform
       pos: 3.5,98.5
       parent: 1
-  - uid: 26436
-    components:
-    - type: MetaData
-      name: Mercenary Base
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 155.5,546.5
-      parent: 1
 - proto: weird_sculpture2
   entities:
   - uid: 27546
@@ -431858,13 +431796,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,103.5
-      parent: 1
-    - type: Physics
-      bodyType: Static
-  - uid: 27747
-    components:
-    - type: Transform
-      pos: 150.5,552.5
       parent: 1
     - type: Physics
       bodyType: Static
@@ -437678,6 +437609,13 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
+- proto: WoodGreenDoorFallout
+  entities:
+  - uid: 9414
+    components:
+    - type: Transform
+      pos: 156.5,554.5
+      parent: 1
 - proto: WoodRedDoorFallout
   entities:
   - uid: 28829

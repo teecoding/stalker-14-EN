@@ -83,5 +83,44 @@
   id: 8
   time: '2026-01-29T20:58:58.913420+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/358
+- author: teecoding
+  changes:
+  - message: Possible fix for faction dogtags not showing correct chat bubbles when
+      spawning or reconnecting
+    type: Fix
+  id: 9
+  time: '2026-02-01T14:51:53.182867+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/362
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Light from flashlights and other things affected by player's rotation
+      will now rotate more smoothly in combat mode.
+    type: Tweak
+  id: 10
+  time: '2026-02-01T14:54:15.133593+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/363
+- author: crocodilecarousel
+  changes:
+  - message: Map changes
+    type: Tweak
+  id: 11
+  time: '2026-02-02T02:14:43.757655+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/367
+- author: teecoding
+  changes:
+  - message: Prevent emission lightning from spawning near players in safe zones
+    type: Fix
+  id: 12
+  time: '2026-02-02T18:27:50.198569+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/371
+- author: teecoding
+  changes:
+  - message: Press N to quickly pull a bolt from your bags into your hand
+    type: Add
+  - message: all Stalker keybinds are now grouped together and rebindable
+    type: Tweak
+  id: 13
+  time: '2026-02-03T21:28:20.224043+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/375
 Name: Stalker
 Order: -1

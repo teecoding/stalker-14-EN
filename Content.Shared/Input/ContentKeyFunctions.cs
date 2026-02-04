@@ -35,6 +35,8 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction OpenInventoryMenu = "OpenInventoryMenu";
         public static readonly BoundKeyFunction SmartEquipBackpack = "SmartEquipBackpack";
         public static readonly BoundKeyFunction SmartEquipOuterClothing = "SmartEquipOuterClothing"; // Stalker-Changes-UI
+        // stalker-EN-merge: EN keybind, not in upstream
+        public static readonly BoundKeyFunction STQuickEquipBolt = "STQuickEquipBolt";
         public static readonly BoundKeyFunction SmartEquipBelt = "SmartEquipBelt";
         public static readonly BoundKeyFunction SmartEquipPocket1 = "SmartEquipPocket1";
         public static readonly BoundKeyFunction SmartEquipPocket2 = "SmartEquipPocket2";
