@@ -1,7 +1,11 @@
 # "Ambush" mob AI: behaves like STSimpleHostileCompound, but stands perfectly still
-# instead of wandering when it has no target. Pair it with a small VisionRadius (e.g. 3)
+# instead of wandering when it has no target. Pair it with a small VisionRadius (e.g. 2-3)
 # so the mob only "notices" players who get close, and a larger AggroVisionRadius so it
 # keeps hunting once provoked. When it loses its target it falls back to standing still.
+#
+# Being damaged also wakes it from any range: NPCRetaliation marks the attacker hostile, and
+# the STAmbushWakeAliveTargets query below acquires that attacker without a line-of-sight check,
+# so a shot from across the room provokes it just like stepping into VisionRadius would.
 
 # Stand perfectly still (no movement) and wait. Used as the idle fallback so the mob keeps
 # its static, non-moving sprite until a higher-priority (combat) branch becomes valid.
@@ -29,6 +33,44 @@
             - !type:KeyExistsPrecondition
               key: IdleTime
 
+# Target-acquisition query for the ambush state. It is a copy of STMeleeAliveTargets (see
+# _Stalker/HTNs/Combat/hostile.yml) with the TargetInLOSOrCurrentCon consideration removed.
+# That removed consideration is the line-of-sight + within-VisionRadius gate; it is what normally
+# stops a mob from "noticing" anything past its VisionRadius. Faction-based (proximity) targets are
+# still range-gated inside GetNearbyHostiles, so dropping it here does NOT let the mob see wandering
+# players from afar. What it DOES do: an attacker that NPCRetaliation added to the faction-exception
+# Hostiles set is returned regardless of distance, so being shot from beyond VisionRadius wakes the
+# mob and it hunts the shooter for attackMemoryLength before re-freezing.
+- type: utilityQuery
+  id: STAmbushWakeAliveTargets
+  query:
+  - !type:NearbyHostilesQuery
+  considerations:
+    - !type:TargetIsAliveCon
+      curve: !type:BoolCurve
+    - !type:TargetIsDeadCon
+      curve: !type:InverseBoolCurve
+    - !type:TargetDistanceCon
+      curve: !type:PresetCurve
+        preset: TargetDistance
+    - !type:TargetHealthCon
+      curve: !type:PresetCurve
+        preset: TargetHealth
+    - !type:TargetAccessibleCon
+      curve: !type:BoolCurve
+
+# Same as STSimpleMeleeCombatAliveCompound but using the no-LOS acquisition query above. The actual
+# chase/attack still reuses STSimpleMeleeAttackTargetCompound, so melee behaviour is unchanged.
+- type: htnCompound
+  id: STAmbushMeleeCombatAliveCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STAmbushWakeAliveTargets
+    - !type:HTNCompoundTask
+      task: STSimpleMeleeAttackTargetCompound
+
 - type: htnCompound
   id: STAmbushHostileCompound
   branches:
@@ -38,9 +80,9 @@
           preconditions:
             - !type:PulledPrecondition
               isPulled: true
-    - tasks: # chase and melee a living target within vision
+    - tasks: # chase and melee a living target (woken by proximity OR by being damaged at any range)
         - !type:HTNCompoundTask
-          task: STSimpleMeleeCombatAliveCompound
+          task: STAmbushMeleeCombatAliveCompound
     - tasks: # finish off a downed/crit target
         - !type:HTNCompoundTask
           task: STSimpleMeleeCombatCritCompound
